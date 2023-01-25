@@ -1,9 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import { Poppins, Roboto } from "@next/font/google";
+import Post from "@/components/Post";
+import styles from "@/styles/Home.module.css";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  display: "optional",
+  weight: ["700", "400"],
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  display: "optional",
+  weight: ["700", "400"],
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
@@ -14,110 +25,111 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <span className={roboto.className}>
+            RocketBlog<i className={styles.dotBlog}>.</i>
+          </span>
+          <ul className={styles.containerLinks}>
+            <li>
+              <a className={roboto.className} href="#">
+                Home
+              </a>
+            </li>
+            <li>
+              <a className={roboto.className} href="#">
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a className={roboto.className} href="#">
+                Artigos
+              </a>
+            </li>
+            <li>
+              <a className={roboto.className} href="#">
+                Contato
+              </a>
+            </li>
+          </ul>
+          <div className={styles.containerSearch}>
+            <input placeholder="Search" className={styles.inputSearch} />
+            <button type="submit" className={styles.btnSearch}>
+              <Image src="/search.svg" alt="" width={24} height={24} />
+            </button>
+          </div>
+        </nav>
+        <section className={styles.sectionHeader}>
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
+            <Post
+              postTitle="Veja o guia definitivo para conquistar seus objetivos como DEV em 2022"
+              postDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique placerat hac. "
+            />
+            <a href="#" className={roboto.className}>
+              Ver Mais{" "}
+              <Image src="/arrow-right.svg" alt="" width={24} height={24} />
             </a>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
+          <img
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            alt=""
           />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
+        </section>
+      </header>
+      <main className={styles.main}>
+        <section className={styles.sectionPosts}>
+          <Post
+            img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            date="Janeiro, 04/22"
+            postTitle="Começando no ReactJS em 2022"
+            postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+        error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+        dignissimos est id deserunt doloribus fugiat porro exercitationem."
+          />
+          <div className={styles.containerPostsColunm}>
+            <Post
+              date="Janeiro, 04/22"
+              postTitle="Começando no ReactJS em 2022"
+              postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+      error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+      dignissimos est id deserunt doloribus fugiat porro exercitationem."
+            />
+            <Post
+              date="Janeiro, 04/22"
+              postTitle="Começando no ReactJS em 2022"
+              postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+      error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+      dignissimos est id deserunt doloribus fugiat porro exercitationem."
             />
           </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        </section>
+        <section className={styles.sectionPosts}>
+          <Post
+            img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            date="Janeiro, 04/22"
+            postTitle="Começando no ReactJS em 2022"
+            postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+      error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+      dignissimos est id deserunt doloribus fugiat porro exercitationem."
+          />
+          <Post
+            img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            date="Janeiro, 04/22"
+            postTitle="Começando no ReactJS em 2022"
+            postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+      error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+      dignissimos est id deserunt doloribus fugiat porro exercitationem."
+          />
+          <Post
+            img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            date="Janeiro, 04/22"
+            postTitle="Começando no ReactJS em 2022"
+            postDescription="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam nostrum
+      error a aut sit illo et impedit alias enim asperiores dolore obcaecati,
+      dignissimos est id deserunt doloribus fugiat porro exercitationem."
+          />
+        </section>
       </main>
     </>
-  )
+  );
 }
