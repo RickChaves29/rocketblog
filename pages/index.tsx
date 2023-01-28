@@ -1,16 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 
-import { Poppins, Roboto } from "@next/font/google";
+import { Roboto } from "@next/font/google";
 import Post from "@/components/Post";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
-
-const poppins = Poppins({
-  display: "optional",
-  weight: ["700", "400"],
-  subsets: ["latin"],
-});
+import Image from "next/image";
 
 const roboto = Roboto({
   display: "optional",
@@ -29,6 +23,22 @@ export default function Home() {
       </Head>
       <Header />
       <main className={styles.main}>
+        <section className={styles.sectionHeader}>
+          <div>
+            <Post
+              postTitle="Veja o guia definitivo para conquistar seus objetivos como DEV em 2022"
+              postDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique placerat hac. "
+            />
+            <a href="#" className={roboto.className}>
+              Ver Mais{" "}
+              <Image src="/arrow-right.svg" alt="" width={24} height={24} />
+            </a>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"
+            alt=""
+          />
+        </section>
         <section className={styles.sectionPosts}>
           <Post
             img="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80"

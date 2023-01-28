@@ -1,0 +1,7 @@
+.containerLinks {
+  display: flex;
+  gap: 2rem;
+}
+.containerLinks > li > a {
+  color: var(--white);
+}

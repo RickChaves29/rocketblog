@@ -1,0 +1,27 @@
+.containerSearch {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+.inputSearch {
+  text-align: start;
+  padding: 16px;
+  border: 0;
+  background-color: var(--purpose-search);
+  color: var(--white);
+  border-bottom: 1px solid var(--purpose-min);
+  border-radius: 8px 0 0 8px;
+}
+.inputSearch:focus {
+  outline: none;
+}
+.btnSearch {
+  background-color: var(--purpose-min);
+  padding: 10px 23px;
+  border: 0;
+  border-radius: 0 8px 8px 0;
+}
+.iconSearch {
+  width: 24px;
+  height: 24px;
+}

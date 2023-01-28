@@ -5,6 +5,33 @@
   justify-content: center;
   gap: 3.75rem;
 }
+.sectionHeader {
+  display: flex;
+  gap: 1.875rem;
+}
+.sectionHeader > img {
+  max-width: 570px;
+  min-width: 170px;
+  max-height: 346px;
+  min-height: 146px;
+  border-radius: 8px;
+}
+
+.sectionHeader > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.sectionHeader > div > a {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  color: var(--purpose-min);
+  font-weight: 700;
+  font-size: 18px;
+}
 .sectionPosts {
   display: flex;
   flex-direction: row;
@@ -18,6 +45,15 @@
 }
 
 @media (max-width: 600px) {
+  .sectionHeader {
+    display: flex;
+    flex-direction: column;
+  }
+  .sectionHeader > img {
+    max-width: 370px;
+    min-width: 170px;
+    border-radius: 8px;
+  }
   .sectionPosts {
     flex-wrap: wrap;
   }
